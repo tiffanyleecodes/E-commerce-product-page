@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="./app.js" defer></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay hidden"></div>
+    <div class="wrapper">
+      <header>
+        <div class="mobile-menu hidden">
+          <img src="./images/icon-close.svg" alt="" class="closeBtn mobile" />
+          <nav>
+            <ul>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <img src="./images/icon-menu.svg" alt="" class="openBtn mobile" />
+          <img src="./images/logo.svg" alt="" class="logo" />
+          <div class="desktop-menu">
+            <nav>
+              <ul>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div>
+          <img src="./images/icon-cart.svg" alt="" class="cart" />
+          <p class="qty-cart hidden">0</p>
+          <img src="./images/image-avatar.png" alt="" class="avatar" />
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <!-- mobile slide -->
+          <div class="slideshow">
+            <button class="preBtn mobile">
+              <img
+                src="./images/icon-previous.svg"
+                alt=""
+                onclick="plusSlides(-1)"
+              />
+            </button>
+            <button class="nextBtn mobile" onclick="plusSlides(+1)">
+              <img src="./images/icon-next.svg" alt="" />
+            </button>
+            <div class="slide">
+              <img src="./images/image-product-1.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="./images/image-product-2.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="./images/image-product-3.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="./images/image-product-4.jpg" alt="" />
+            </div>
+            <div class="gallery">
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt=""
+                class="galleryPic"
+                onclick="currentSlide(1)"
+              />
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt=""
+                class="galleryPic"
+                onclick="currentSlide(2)"
+              />
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt=""
+                class="galleryPic"
+                onclick="currentSlide(3)"
+              />
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt=""
+                class="galleryPic"
+                onclick="currentSlide(4)"
+              />
+            </div>
+            <!-- desktop  -->
+            <div class="slideShowPage hidden">
+              <button class="preBtnInner">
+                <img
+                  src="./images/icon-previous.svg"
+                  alt=""
+                  onclick="plusSlidesInner(-1)"
+                />
+              </button>
+              <button class="nextBtnInner" onclick="plusSlidesInner(+1)">
+                <img src="./images/icon-next.svg" alt="" />
+              </button>
+              <div class="slides">
+                <img src="./images/image-product-1.jpg" alt="" />
+              </div>
+              <div class="slides">
+                <img src="./images/image-product-2.jpg" alt="" />
+              </div>
+              <div class="slides">
+                <img src="./images/image-product-3.jpg" alt="" />
+              </div>
+              <div class="slides">
+                <img src="./images/image-product-4.jpg" alt="" />
+              </div>
+              <div class="galleryInner">
+                <img
+                  src="./images/image-product-1-thumbnail.jpg"
+                  alt=""
+                  class="galleryPicInner"
+                  onclick="currentSlideInner(1)"
+                />
+                <img
+                  src="./images/image-product-2-thumbnail.jpg"
+                  alt=""
+                  class="galleryPicInner"
+                  onclick="currentSlideInner(2)"
+                />
+                <img
+                  src="./images/image-product-3-thumbnail.jpg"
+                  alt=""
+                  class="galleryPicInner"
+                  onclick="currentSlideInner(3)"
+                />
+                <img
+                  src="./images/image-product-4-thumbnail.jpg"
+                  alt=""
+                  class="galleryPicInner"
+                  onclick="currentSlideInner(4)"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- desktop layout  -->
+        </section>
+        <!-- cart page -->
+        <div class="cart-page hidden">
+          <p class="cart-text">Cart</p>
+          <hr />
+          <div class="cart-content">
+            <p class="empty">Your cart is empty</p>
+            <div class="full hidden">
+              <div>
+                <img
+                  src="./images/image-product-1-thumbnail.jpg"
+                  alt=""
+                  class="thumbnail"
+                />
+                <p>
+                  Fall Limited Edition Sneakers<br />$125 x
+                  <span class="qtyincart">0</span>
+                  <span class="totalPrice"></span>
+                </p>
+                <img src="./images/icon-delete.svg" alt="" class="delete" />
+              </div>
+              <button>Checkout</button>
+            </div>
+          </div>
+        </div>
+
+        <!--  -->
+        <section class="productContent">
+          <p class="compony">Sneaker Company</p>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p class="content">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <div class="price">
+            <p class="specialPrice">
+              $125.00 <span class="discount">50%</span>
+            </p>
+            <p class="originalPrice">$250.00</p>
+          </div>
+          <div class="button-bar">
+            <div class="qty-bar">
+              <img src="./images/icon-minus.svg" alt="" class="minus" />
+              <p class="qty">0</p>
+              <img src="./images/icon-plus.svg" alt="" class="plus" />
+            </div>
+            <button class="addtoCart">
+              <img src="./images/icon-cart copy.svg" alt="" />Add to cart
+            </button>
+          </div>
+        </section>
+      </main>
+      <footer class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >.
+        </p>
+        <p>
+          Coded by
+          <a href="https://www.frontendmentor.io/profile/tifflee7784"
+            >Tiffany Lee</a
+          >.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
